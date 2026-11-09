@@ -200,6 +200,10 @@ footer ul a {
     --margin: 25px;
   }
 
+  .icons {
+    flex-direction: row;
+  }
+
   .author {
     flex-direction: column;
     padding: var(--margin);
