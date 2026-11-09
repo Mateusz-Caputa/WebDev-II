@@ -1,4 +1,4 @@
-/* Default - tablet, the easiest go both directions */
+/* Default - tablet, the easiest to go both directions */
 :root {
   --bg-body: #070410;
   --bg-nav: #231651;
@@ -14,6 +14,7 @@
   --font-family-headings: "Teko";
 
   --font-size-logo: 3em;
+  --font-size-movie: 1.5em;
 }
 
 /* Reset spacing */
@@ -29,14 +30,22 @@ body {
   font-family: var(--font-family);
 }
 
+/* Header and navigation */
 header {
   background-color: var(--bg-nav);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 5px 5px 10px 5px var(--action-color);
 
   h1 {
     margin: var(--space-sm);
+    font-size: var(--font-size-logo);
+  }
+
+  h1,
+  h2 {
+    font-family: var(--font-family-headings);
   }
 
   nav {
@@ -46,15 +55,8 @@ header {
     ul {
       list-style: none;
       display: flex;
-
-      a {
-        padding: var(--space-lg);
-      }
+      gap: var(--space-lg);
     }
-  }
-
-  button {
-    margin: var(--space-sm);
   }
 }
 
@@ -63,28 +65,39 @@ a {
   text-decoration: none;
 }
 
+/* Button */
 button {
   padding: var(--space-sm);
   font-size: 2em;
+  font-family: var(--font-family-headings);
   border: 1px solid var(--active-color);
   background-color: var(--action-color);
   border-radius: var(--border-radius);
-  margin-top: auto;
+  margin: var(--space-sm);
 }
 
+/* Main page content wrapper */
 main {
+  max-width: 900px;
   margin: 0 auto;
   padding: var(--space-lg);
-  max-width: 900px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  column-gap: var(--space-lg);
-  row-gap: var(--space-lg);
+  column-gap: var(--space-sm);
+  row-gap: var(--space-sm);
+  justify-content: center;
 }
 
+/* Global movie card */
 .movie {
   display: flex;
   flex-direction: column;
+  background-color: var(--bg-nav);
+  box-shadow: 5px 5px 0px 0px var(--action-color);
+
+  p {
+    font-size: var(--font-size-movie);
+  }
 
   .poster img {
     width: 100%;
@@ -96,12 +109,17 @@ main {
     display: flex;
     flex-direction: column;
     flex: 1;
+    gap: var(--space-sm)
+  }
+
+  button {
+    margin-top: auto;
   }
 }
 
+/* Mobile Devices */
 @media (max-width: 720px) {
   :root {
-    --space-sm: 16px;
     --space-lg: 16px;
     --font-size-logo: 2em;
   }
@@ -110,16 +128,26 @@ main {
     grid-template-columns: repeat(1, 1fr);
   }
 
+  header {
+    box-shadow: none;
+  }
+
+  .movie {
+    box-shadow: none;
+  }
+
   header nav {
     display: none;
   }
 }
 
+/* Desktops */
 @media (min-width: 1024px) {
   :root {
     --space-lg: 48px;
   }
 
+  /* All movie cards */
   .movie {
     grid-column: span 2;
     display: flex;
@@ -133,6 +161,7 @@ main {
     }
   }
 
+  /* First movie card */
   .movie:nth-child(1) {
     grid-column: span 2;
     flex-direction: column;
@@ -150,9 +179,12 @@ main {
     }
   }
 
+  /* 2nd and 3rd movie card on desktop */
   .movie:nth-child(2),
   .movie:nth-child(3) {
     grid-column: span 1;
     flex-direction: column !important;
   }
 }
+
+/* No comments. I spent so much time on this */
