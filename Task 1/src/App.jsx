@@ -68,24 +68,30 @@ function App() {
   return (
     <>
       <div className="page-wrapper">
+
         <header className="text-center">
           <Logo size={200} className="margin-y" />
           <Nav links={navLinks} />
         </header>
+
         <main>
           <Article title={article.title} hero={article.hero} sections={article.sections} />
           <Albums featured={albumCovers.featured} others={albumCovers.other} />
           <Author title={author.title} content={author.content} photo={author.photo} socials={author.socials} />
         </main>
+
         <aside className="comments">
           <Comments title="Comments" comments={comments} />
         </aside>
+
       </div>
+
       <footer className="padding-y text-center">
         <Nav links={navLinks} />
         <p className="margin-y">Copyright &copy; 2024 Ahmed Webb.</p>
         <SocialIcons socials />
       </footer>
+
     </>
   )
 }
