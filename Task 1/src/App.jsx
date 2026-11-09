@@ -16,7 +16,7 @@ const navLinks = [
 ];
 
 const article = {
-  title: "Erased Tapes :",
+  title: "Erased Tapes:",
   hero: {
     title: "Exploring the Sonic Frontier",
     paragraph: "Lorem ipsum odor amet, consectetuer adipiscing elit. Mi eu scelerisque turpis posuere tempor? Leo condimentum himenaeos molestie elit; maximus iaculis proin nulla. Ullamcorper nibh cras conubia suscipit dapibus sagittis, facilisi habitant vivamus. Etiam fusce posuere himenaeos ipsum commodo sollicitudin himenaeos nec."
