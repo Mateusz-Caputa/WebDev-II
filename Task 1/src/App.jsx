@@ -89,7 +89,7 @@ function App() {
       <footer className="padding-y text-center">
         <Nav links={navLinks} />
         <p className="margin-y">Copyright &copy; 2024 Ahmed Webb.</p>
-        <SocialIcons socials />
+        <SocialIcons instagram={page.socials.instagram} facebok={page.socials.facebook} x={page.socials.x} />
       </footer>
 
     </>
